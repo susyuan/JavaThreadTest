@@ -10,6 +10,13 @@ public class Demo1 {
         thread1.start();
         thread2.setName("线程2");
         thread2.start();
+        //创建线程的匿名子类方式
+        new Thread() {
+            @Override
+            public void run() {
+                System.out.println(Thread.currentThread().getName());
+            }
+        }.start();
     }
 }
 
