@@ -4,7 +4,7 @@ package com.duoduo.test;
 个线程输出1~100 之间的奇数。
 没有线程同步问题 直接start
  */
-public class Test3 {
+public class Test1PrintTest {
     public static void main(String[] args) {
         new Thread1("线程1").start();
         new Thread2("线程2").start();
