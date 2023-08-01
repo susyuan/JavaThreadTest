@@ -17,6 +17,12 @@ public class Demo4ThreadPool {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         System.out.println(executorService.getClass());
         // 设置线程池的属性 需要用 ThreadPoolExecutor接口
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
+                5, 10, 5, TimeUnit.MINUTES,
+                new SynchronousQueue<Runnable>(),
+                Executors.defaultThreadFactory(),
+                new ThreadPoolExecutor.AbortPolicy()
+                );
         ThreadPoolExecutor service = (ThreadPoolExecutor) executorService;
         service.setCorePoolSize(15);
         service.setKeepAliveTime(100, TimeUnit.MINUTES);
